@@ -94,11 +94,11 @@
 	    iconname = iconname.replace(/\s/g, '');
 	    iconname = iconname.replace(/:\s*/g, '');
 	    iconname = iconname.toLowerCase();
-	    iconname = 'schulekindergarten';
+	    iconname = 'test';
 
       var marker = L.marker([row.lat, row.lng],{icon: schulekindergarten}, {
         opacity: 1
-      }).bindPopup(row.name);
+      }).bindPopup(iconname);
       
       markers.addLayer(marker);
     }
