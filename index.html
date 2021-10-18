@@ -62,6 +62,8 @@
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
+        var markers = L.markerClusterGroup();
+    
   // Read markers data from data.csv
   $.get('./angebote_kjf_uster.csv', function(csvString) {
 
@@ -71,7 +73,6 @@
     // For each row in data, create a marker and add it to the map
     // For each row, columns `Latitude`, `Longitude`, and `Title` are required
     
-    var markers = L.markerClusterGroup();
     
     for (var i in data) {
       var row = data[i];
@@ -82,9 +83,9 @@
       
       markers.addLayer(marker);
     }
-map.addLayer(markers);
-  });
 
+  });
+map.addLayer(markers);
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
   );
