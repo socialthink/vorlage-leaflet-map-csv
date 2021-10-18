@@ -60,7 +60,7 @@
   }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(terrain, 'Stamen Terrain basemap');
 
-    var test = L.icon({
+    var SchuleKindergarten = L.icon({
     iconUrl: 'test.png',
 
     iconSize:     [40, 30], // size of the icon
@@ -94,9 +94,9 @@
 	    iconname = iconname.replace(/\s/g, '');
 	    iconname = iconname.replace(/:\s*/g, '');
 
-      var marker = L.marker([row.lat, row.lng],{icon: test}, {
+      var marker = L.marker([row.lat, row.lng],{icon: iconname}, {
         opacity: 1
-      }).bindPopup(iconname);
+      }).bindPopup(row.name);
       
       markers.addLayer(marker);
     }
