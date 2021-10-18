@@ -90,10 +90,12 @@
     
     for (var i in data) {
       var row = data[i];
+	    var iconname = row.name;
+	    iconname = iconname.replace(/\s/g, '');
 
       var marker = L.marker([row.lat, row.lng],{icon: test}, {
         opacity: 1
-      }).bindPopup(row.name);
+      }).bindPopup(iconname);
       
       markers.addLayer(marker);
     }
