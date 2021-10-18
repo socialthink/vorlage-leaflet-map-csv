@@ -34,7 +34,7 @@
   // Set up initial map center and zoom level
   var map = L.map('map', {
     center: [47.35, 8.71], // EDIT latitude, longitude to re-center map
-    zoom: 10,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
+    zoom: 12,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
     scrollWheelZoom: false,
     tap: false
   });
@@ -67,6 +67,9 @@
 
     // For each row in data, create a marker and add it to the map
     // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    
+    var markers = L.markerClusterGroup();
+    
     for (var i in data) {
       var row = data[i];
 
@@ -74,9 +77,9 @@
         opacity: 1
       }).bindPopup(row.name);
       
-      marker.addTo(map);
+      markers.addLayer(marker);
     }
-
+map.addLayer(markers);
   });
 
   map.attributionControl.setPrefix(
