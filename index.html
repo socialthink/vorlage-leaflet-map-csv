@@ -71,7 +71,13 @@
     
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
-        var markers = L.markerClusterGroup();
+        var markers = L.markerClusterGroup({
+	spiderfyOnMaxZoom: true,
+	showCoverageOnHover: false,
+	zoomToBoundsOnClick: true,
+  disableClusteringAtZoom: 16    
+          
+});
     
   // Read markers data from data.csv
   $.get('./angebote_kjf_uster.csv', function(csvString) {
