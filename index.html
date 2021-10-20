@@ -31,12 +31,7 @@
   <script>
 
   // Set up initial map center and zoom level
-  var map = L.map('map', {
-    center: [47.35, 8.71], // EDIT latitude, longitude to re-center map
-    zoom: 12,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
-    scrollWheelZoom: true,
-    tap: false
-  });
+var map = L.map('map').setView([47.35, 8.71], 12);
 
   /* Control panel to display map layers */
   var controlLayers = L.control.layers( null, null, {
